@@ -1,0 +1,36 @@
+general {
+		colors = true
+		interval = 5
+}
+
+order += "cpu_temperature 0"
+order += "disk /"
+order += "wireless wlp2s0"
+order += "volume master"
+order += "tztime local"
+
+disk "/" {
+	format = " %free"
+}
+
+wireless wlp2s0 {
+    format_up = " (%quality at %essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+tztime local {
+    format = "%d.%m.%Y %H:%M"
+}
+
+cpu_temperature 0 {
+    format = "T: %degrees °C"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
+}
+
+# 
+
+volume master {
+	format = " %volume"
+	format_muted = " muted (%volume)"
+	device = "pulse:1"
+}
