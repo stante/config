@@ -1,0 +1,13 @@
+URxvt*foreground: #b2b2b2
+URxvt*background: #000000
+URxvt*scrollBar: false
+URxvt*font: xft:Hack:pixelsize=10
+! Fake transparency
+URxvt*transparent: true
+URxvt*shading: 20
+! Compositer transparancy
+URxvt*depth: 32
+! URxvt*background: rgba:0000/0000/0200/c800
+URxvt*color4: #00DD00
+URxvt*color12: #268bd2
+URxvt.urlLauncher: firefox
