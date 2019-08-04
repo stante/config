@@ -6,6 +6,7 @@ general {
 order += "cpu_temperature 0"
 order += "disk /"
 order += "wireless _first_"
+order += "battery all"
 order += "volume master"
 order += "tztime local"
 
@@ -16,6 +17,10 @@ disk "/" {
 wireless _first_ {
     format_up = " (%quality at %essid, %bitrate) %ip"
     format_down = "W: down"
+}
+
+battery all {
+		format = "%status %percentage %remaining"
 }
 
 tztime local {
