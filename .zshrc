@@ -15,5 +15,6 @@ compinit
 
 alias ls='ls --color=auto'
 alias ll='ls -la'
+alias diff='diff --color'
 alias tree='tree -AC'
 PS1='[%~]$ '
