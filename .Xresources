@@ -11,3 +11,4 @@ URxvt*depth: 32
 URxvt*color4: #00DD00
 URxvt*color12: #268bd2
 URxvt.urlLauncher: firefox
+URxvt.termName: xterm-256color
