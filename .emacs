@@ -1,6 +1,6 @@
 ;; ---------------------------------------------------------------------------
 ;; Alexander Stante's .emacs file
-;; Time-stamp: <2019-12-22 13:32:57 alex>
+;; Time-stamp: <2019-12-22 13:38:15 alex>
 ;;
 
 (custom-set-variables
@@ -479,11 +479,6 @@
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 ;; (setq jedi:complete-on-dot t)
-
-;;
-;; elpy
-;;
-(elpy-enable)
 
 ;; ---------------------------------------------------------------------------
 ;; pp
