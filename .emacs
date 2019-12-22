@@ -1,6 +1,6 @@
 ;; ---------------------------------------------------------------------------
 ;; Alexander Stante's .emacs file
-;; Time-stamp: <2019-12-22 13:18:50 alex>
+;; Time-stamp: <2019-12-22 13:25:40 alex>
 ;;
 
 (custom-set-variables
@@ -385,8 +385,8 @@
 ;; ---------------------------------------------------------------------------
 ;; autopair
 ;; ---------------------------------------------------------------------------
-(require 'autopair)
-(autopair-global-mode)
+;; (require 'autopair)
+;; (autopair-global-mode)
 
 ; bug fix for return bug in ansi-term with autopair
 (add-hook 'term-mode-hook
