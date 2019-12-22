@@ -6,8 +6,6 @@
 ;; ░██░░██████ ███ ░██ ░██░░████████░░█████  ██████ 
 ;; ░░  ░░░░░░ ░░░  ░░  ░░  ░░░░░░░░  ░░░░░  ░░░░░░  
 ;; Alexander Stante's .emacs file
-;;
-;; Time-stamp: <2019-12-22 14:53:20 alex>
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -34,7 +32,7 @@
 (delete-selection-mode 1)
 
 ;; set font
-(set-face-attribute 'default nil :family 'monospace' :height 90)
+(set-face-attribute 'default nil :family 'monospace' :height 100)
 
 ;; disable startup screen
 (setq inhibit-splash-screen t)
@@ -542,34 +540,3 @@
 ;; undo tree mode
 (global-undo-tree-mode)
 
-;; ---------------------------------------------------------------------------
-;; own stuff
-;; ---------------------------------------------------------------------------
-
-(defun refactor-region-up ())
-(defun refactor-region-down ())
-
-(defun refactor-switch-files ()
-  (interactive)
-  (print (string-match "\.c$" (buffer-name))))
-
-(global-set-key (kbd "C-x #") 'refactor-switch-files)
-
-(defun prefix-value-test (&optional n)
-  (interactive "P")
-  (message "foobar"))
-
-
-(defun read-only-if-symlink ()
-  (if (file-symlink-p (buffer-file-name))
-	  (progn
-		(setq buffer-read-only t)
-		(message "File is symlink"))))
-
-(add-hook 'find-file 'read-only-if-symlink)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
