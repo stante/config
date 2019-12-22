@@ -1,10 +1,13 @@
-;;    ___ _ __ ___   __ _  ___ ___
-;;   / _ \ '_ ` _ \ / _` |/ __/ __|
-;;  |  __/ | | | | | (_| | (__\__ \
-;; (_)___|_| |_| |_|\__,_|\___|___/
+;;                                                 
+;;      █████  ██████████   ██████    █████   ██████
+;;     ██░░░██░░██░░██░░██ ░░░░░░██  ██░░░██ ██░░░░ 
+;;    ░███████ ░██ ░██ ░██  ███████ ░██  ░░ ░░█████ 
+;;  ██░██░░░░  ░██ ░██ ░██ ██░░░░██ ░██   ██ ░░░░░██
+;; ░██░░██████ ███ ░██ ░██░░████████░░█████  ██████ 
+;; ░░  ░░░░░░ ░░░  ░░  ░░  ░░░░░░░░  ░░░░░  ░░░░░░  
 ;; Alexander Stante's .emacs file
 ;;
-;; Time-stamp: <2019-12-22 14:36:45 alex>
+;; Time-stamp: <2019-12-22 14:53:20 alex>
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -18,20 +21,22 @@
     (realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
 
 ;; ---------------------------------------------------------------------------
-;; Basic stuff
+;; Basic configuration
 ;; ---------------------------------------------------------------------------
 
-;; disable tool and scrollbar
+;; disable toolbar
 (tool-bar-mode -1)
+
+;; disable scrollbar
 (scroll-bar-mode -1)
 
-;; delete selection
+;; delete whole selection when character is entered
 (delete-selection-mode 1)
 
-;; font
+;; set font
 (set-face-attribute 'default nil :family 'monospace' :height 90)
 
-;; no startup screen
+;; disable startup screen
 (setq inhibit-splash-screen t)
 
 ;; default directory
@@ -46,18 +51,19 @@
 ;; disable autosave
 (setq auto-save-default nil)
 
-;; dont put cursor in the middle of the screen after 
+;; don't put cursor in the middle of the screen after 
 (setq scroll-conservatively 1)
 
 ;; set default tab width to 4
 (setq default-tab-width 4)
 
+;; no audio bell
 (setq visible-bell t)
 
 ;; focus-follows-mouse in windows
 (setq mouse-autoselect-window t)
 
-;; some basic hooks
+;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
 
 
