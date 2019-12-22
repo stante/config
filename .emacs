@@ -1,6 +1,6 @@
 ;; ---------------------------------------------------------------------------
 ;; Alexander Stante's .emacs file
-;; Time-stamp: <2019-12-22 13:41:16 alex>
+;; Time-stamp: <2019-12-22 13:50:54 alex>
 ;;
 
 (custom-set-variables
@@ -157,8 +157,8 @@
 ;; ---------------------------------------------------------------------------
 ;; emacs-lisp-mode
 ;; ---------------------------------------------------------------------------
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 
