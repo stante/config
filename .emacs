@@ -1,6 +1,6 @@
 ;; ---------------------------------------------------------------------------
 ;; Alexander Stante's .emacs file
-;; Time-stamp: <2019-12-22 13:25:40 alex>
+;; Time-stamp: <2019-12-22 13:32:57 alex>
 ;;
 
 (custom-set-variables
@@ -421,14 +421,6 @@
 ;									 ac-source-words-in-same-mode-buffers)))
 (add-hook 'c++-mode-hook 'ac-c-mode-setup)
 (add-hook 'c-mode-hook 'ac-c-mode-setup)
-
-;; (add-hook 'c++-mode-hook 'auto-complete-mode)
-;; ---------------------------------------------------------------------------
-;; slime
-;; ---------------------------------------------------------------------------
-(require 'slime)
-(setq inferior-lisp-program "clisp")
-(slime-setup '(slime-fancy))
 
 ;; ---------------------------------------------------------------------------
 ;; bbdb
