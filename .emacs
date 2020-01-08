@@ -22,6 +22,9 @@
 ;; Basic configuration
 ;; ---------------------------------------------------------------------------
 
+;; disable menu bar
+(menu-bar-mode -1)
+
 ;; disable toolbar
 (tool-bar-mode -1)
 
