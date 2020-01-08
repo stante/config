@@ -16,7 +16,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages
    (quote
-    (realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
+    (auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
 
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
@@ -371,9 +371,10 @@
 ;; ---------------------------------------------------------------------------
 ;; ---------------------------------------------------------------------------
 ;; ---------------------------------------------------------------------------
-(package-initialize)
+(require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-sta" . "http://melpa.org/packages/"))
+(package-initialize)
 
 ;; ---------------------------------------------------------------------------
 ;; yasnippet
@@ -540,3 +541,9 @@
 ;; undo tree mode
 (global-undo-tree-mode)
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
