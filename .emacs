@@ -16,7 +16,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages
    (quote
-    (auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
+    (counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
 
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
@@ -314,9 +314,9 @@
 ;; ---------------------------------------------------------------------------
 ;; ido-mode
 ;; ---------------------------------------------------------------------------
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching t)
+;; (require 'ido)
+;; (ido-mode t)
+;; (setq ido-enable-flex-matching t)
 
 ;; ---------------------------------------------------------------------------
 ;; eshell
@@ -434,6 +434,11 @@
 (add-hook 'c-mode-hook 'ac-c-mode-setup)
 
 ;; ---------------------------------------------------------------------------
+;; bookmark
+;; ---------------------------------------------------------------------------
+(global-set-key (kbd "C-x RET") 'bookmark-jump)
+
+;; ---------------------------------------------------------------------------
 ;; bbdb
 ;; ---------------------------------------------------------------------------
 ; (require 'bbdb)
@@ -470,6 +475,7 @@
 ;; ---------------------------------------------------------------------------
 (setq ediff-keep-variants nil)
 (setq dired-listing-switches "-lah")
+(global-set-key (kbd "C-c .") 'dired)
 
 ;; ---------------------------------------------------------------------------
 ;; magit
@@ -481,6 +487,13 @@
 ;; ---------------------------------------------------------------------------
 (require 'projectile)
 (projectile-global-mode)
+(global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
+
+;; ---------------------------------------------------------------------------
+;; ivy
+;; ---------------------------------------------------------------------------
+(require 'ivy)
+(ivy-mode 1)
 
 ;; ---------------------------------------------------------------------------
 ;; jedi
