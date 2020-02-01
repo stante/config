@@ -1,7 +1,7 @@
 URxvt*foreground: #b2b2b2
 URxvt*background: #000000
 URxvt*scrollBar: false
-URxvt*font: xft:Hack:pixelsize=12
+URxvt*font: xft:Hack:pixelsize=13
 ! Fake transparency
 URxvt*transparent: true
 URxvt*shading: 20
