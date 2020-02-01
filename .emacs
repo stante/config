@@ -13,10 +13,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "/home/alex/.emacs.d/bookmarks")
- '(custom-enabled-themes (quote (misterioso)))
+ '(custom-enabled-themes (quote (doom-dracula)))
  '(package-selected-packages
    (quote
-    (counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
+    (doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
 
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
@@ -205,8 +205,8 @@
 ;; ---------------------------------------------------------------------------
 (defun my-c-initialization-hook ()
   (define-key c-mode-base-map [remap c-end-of-defun] '(lambda () 
-														(interactive) 
-														(c-beginning-of-defun -1))))
+							(interactive) 
+							(c-beginning-of-defun -1))))
 (add-hook 'c-initialization-hook 'my-c-initialization-hook)
 (add-hook 'c-initialization-hook 'linum-mode)
 ; (add-hook 'c++-initialization-hook 'linum-mode)
@@ -436,7 +436,9 @@
 ;; ---------------------------------------------------------------------------
 ;; bookmark
 ;; ---------------------------------------------------------------------------
-(global-set-key (kbd "C-x RET") 'bookmark-jump)
+(global-set-key (kbd "C-c RET") 'bookmark-jump)
+(global-set-key (kbd "C-c m") 'bookmark-set)
+(global-set-key (kbd "C-c M") 'bookmark-delete)
 
 ;; ---------------------------------------------------------------------------
 ;; bbdb
@@ -480,7 +482,7 @@
 ;; ---------------------------------------------------------------------------
 ;; magit
 ;; ---------------------------------------------------------------------------
-(global-set-key (kbd "C-c m s") 'magit-status)
+;; (global-set-key (kbd "C-c m s") 'magit-status)
 
 ;; ---------------------------------------------------------------------------
 ;; projectile
@@ -543,15 +545,15 @@
 (put 'narrow-to-region 'disabled nil)
 
 ;; dirty temprorary stuff
-(global-set-key
-     "\M-x"
-     (lambda ()
-       (interactive)
-       (call-interactively
-        (intern
-         (ido-completing-read
-          "M-x "
-          (all-completions "" obarray 'commandp))))))
+;; (global-set-key
+;;      "\M-x"
+;;      (lambda ()
+;;        (interactive)
+;;        (call-interactively
+;;         (intern
+;;          (ido-completing-read
+;;           "M-x "
+;;           (all-completions "" obarray 'commandp))))))
 
 
 ;; undo tree mode
