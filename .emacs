@@ -7,6 +7,24 @@
 ;; ░░  ░░░░░░ ░░░  ░░  ░░  ░░░░░░░░  ░░░░░  ░░░░░░  
 ;; Alexander Stante's .emacs file
 
+;; ---------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------
+;; MELPA
+;; ---------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------
+;; ---------------------------------------------------------------------------
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-sta" . "http://melpa.org/packages/"))
+(package-initialize)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -14,9 +32,13 @@
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "/home/alex/.emacs.d/bookmarks")
  '(custom-enabled-themes (quote (doom-dracula)))
+ '(custom-safe-themes
+   (quote
+    ("d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default)))
  '(package-selected-packages
    (quote
-    (doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
+    (yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
+
 
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
@@ -35,7 +57,7 @@
 (delete-selection-mode 1)
 
 ;; set font
-(set-face-attribute 'default nil :family 'monospace' :height 100)
+(set-face-attribute 'default nil :family 'mononoki' :height 110)
 
 ;; disable startup screen
 (setq inhibit-splash-screen t)
@@ -356,7 +378,6 @@
 		  (lambda ()
 			(ibuffer-switch-to-saved-filter-groups "default")))
 (add-hook 'mu4e-view-mode-hook 'visual-line-mode)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
 ;; ---------------------------------------------------------------------------
@@ -367,17 +388,6 @@
 ;; ---------------------------------------------------------------------------
 ;; ---------------------------------------------------------------------------
 
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-;; MELPA
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa-sta" . "http://melpa.org/packages/"))
-(package-initialize)
 
 ;; ---------------------------------------------------------------------------
 ;; yasnippet
@@ -434,13 +444,6 @@
 (add-hook 'c-mode-hook 'ac-c-mode-setup)
 
 ;; ---------------------------------------------------------------------------
-;; bookmark
-;; ---------------------------------------------------------------------------
-(global-set-key (kbd "C-c RET") 'bookmark-jump)
-(global-set-key (kbd "C-c m") 'bookmark-set)
-(global-set-key (kbd "C-c M") 'bookmark-delete)
-
-;; ---------------------------------------------------------------------------
 ;; bbdb
 ;; ---------------------------------------------------------------------------
 ; (require 'bbdb)
@@ -477,7 +480,6 @@
 ;; ---------------------------------------------------------------------------
 (setq ediff-keep-variants nil)
 (setq dired-listing-switches "-lah")
-(global-set-key (kbd "C-c .") 'dired)
 
 ;; ---------------------------------------------------------------------------
 ;; magit
@@ -489,7 +491,6 @@
 ;; ---------------------------------------------------------------------------
 (require 'projectile)
 (projectile-global-mode)
-(global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
 
 ;; ---------------------------------------------------------------------------
 ;; ivy
@@ -559,9 +560,12 @@
 ;; undo tree mode
 (global-undo-tree-mode)
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; ---------------------------------------------------------------------------
+;; Custom keymap
+;; ---------------------------------------------------------------------------
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-c RET") 'bookmark-jump)
+(global-set-key (kbd "C-c m") 'bookmark-set)
+(global-set-key (kbd "C-c M") 'bookmark-delete)
+(global-set-key (kbd "C-c .") 'find-file)
+(global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
