@@ -20,6 +20,7 @@ bindkey -e
 zstyle :compinstall filename '/home/alex/.zshrc'
 
 autoload -Uz compinit
+zstyle ':completion:*' menu select
 compinit
 # End of lines added by compinstall
 
