@@ -183,7 +183,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0x121212'
+    # background: '0x121212'
+    background: '0x000000'
     foreground: '0xb2b2b2'
     # foreground: '0xeaeaea'
 
@@ -288,7 +289,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-# background_opacity: 0.1
+background_opacity: 0.8
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -297,7 +298,7 @@ colors:
   #save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+dynamic_title: true
 
 #cursor:
   # Cursor style
