@@ -31,13 +31,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(bmkp-last-as-first-bookmark-file "/home/alex/.emacs.d/bookmarks")
- '(custom-enabled-themes (quote (doom-dracula)))
+ '(custom-enabled-themes '(doom-dracula))
  '(custom-safe-themes
-   (quote
-    ("d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default)))
+   '("e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default))
  '(package-selected-packages
-   (quote
-    (yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all))))
+   '(counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
 
 
 ;; ---------------------------------------------------------------------------
@@ -569,3 +567,4 @@
 (global-set-key (kbd "C-c M") 'bookmark-delete)
 (global-set-key (kbd "C-c .") 'find-file)
 (global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
+(put 'dired-find-alternate-file 'disabled nil)
