@@ -35,7 +35,7 @@
  '(custom-safe-themes
    '("e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default))
  '(package-selected-packages
-   '(counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
+   '(org-superstar counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
 
 
 ;; ---------------------------------------------------------------------------
@@ -195,6 +195,22 @@
 ;; ---------------------------------------------------------------------------
 ;; org-mode
 ;; ---------------------------------------------------------------------------
+
+(require 'org-superstar)
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+
+(set-face-attribute 'org-document-title nil :font "Cantarell" :weight 'bold :height 1.3)
+(dolist (face '((org-level-1 . 1.2)
+                (org-level-2 . 1.1)
+                (org-level-3 . 1.05)
+                (org-level-4 . 1.0)
+                (org-level-5 . 1.1)
+                (org-level-6 . 1.1)
+                (org-level-7 . 1.1)
+                (org-level-8 . 1.1)))
+  (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+
+
 (require 'org-install)
 (require 'remember)
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -207,7 +223,7 @@
 
 
 ; Set location of org files on local system
-(setq org-directory "~/org/")
+(setq org-directory "~/Documents/org/")
 
 ; Set location of the notes file
 (setq org-default-notes-file (concat org-directory "notes.org"))
