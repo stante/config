@@ -37,7 +37,6 @@
  '(package-selected-packages
    '(org-superstar counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
 
-
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
 ;; ---------------------------------------------------------------------------
@@ -86,8 +85,6 @@
 
 ;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
-
-
 
 ;; ---------------------------------------------------------------------------
 ;; Own functions

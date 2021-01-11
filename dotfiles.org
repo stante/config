@@ -1,5 +1,8 @@
 * Emacs configuration 
+
 Initial emacs Konfiguration
+
+** Melpa
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 ;;                                                 
@@ -41,7 +44,11 @@ Initial emacs Konfiguration
  '(package-selected-packages
    '(org-superstar counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
 
+#+end_src
 
+** Basic configuration
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
 ;; ---------------------------------------------------------------------------
@@ -90,9 +97,11 @@ Initial emacs Konfiguration
 
 ;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
+#+end_src
 
+** Others
 
-
+#+begin_src emacs-lisp :tangle emacs/.emacs
 ;; ---------------------------------------------------------------------------
 ;; Own functions
 ;; ---------------------------------------------------------------------------
@@ -591,6 +600,7 @@ Initial emacs Konfiguration
 #+end_src
 * Application configuration
 ** ZSH
+
 *** General configuration
 
 #+begin_src shell :tangle zsh/.zshrc
@@ -626,6 +636,7 @@ alias diff='diff --color'
 alias tree='tree -AC'
 PS1='[%~]$ '
 #+end_src
+
 *** Conda spezifische Konfiguration
 
 Konfiguration is automatisch durch Conda erstellt worden
@@ -648,6 +659,7 @@ unset __conda_setup
 
 
 #+end_src
+
 ** Alacritty
 *** General
 
@@ -1214,6 +1226,7 @@ dynamic_title: true
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
 #+end_src
+
 ** Neomutt
 *** General
 
@@ -1285,6 +1298,7 @@ color quoted4		color212	default
 color signature		color212	default
 
 #+end_src
+
 
 * Desktop configuration
 ** X
