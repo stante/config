@@ -291,16 +291,24 @@ Initial emacs Konfiguration
 ;; Winner-mode
 ;; ---------------------------------------------------------------------------
 (winner-mode 1)
+#+end_src
 
+** CMake
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
 ;; ---------------------------------------------------------------------------
 ;; CMake
 ;; ---------------------------------------------------------------------------
-(require 'cmake-mode)
-(setq auto-mode-alist
+(use-package cmake-mode
+  :config
+  (setq auto-mode-alist
 	  (append '(("CMakeLists\\.txt\\'" . cmake-mode)
 				("\\.cmake\\'" . cmake-mode))
-				auto-mode-alist))
- 
+				auto-mode-alist)))
+#+end_src
+** Others
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
 ;; ---------------------------------------------------------------------------
 ;; Rcirc
 ;; ---------------------------------------------------------------------------
