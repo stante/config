@@ -1591,3 +1591,18 @@ volume master {
 	device = "pulse:0"
 }
 #+end_src
+** Redshift
+
+Redshift is a tool to change the screen temperature based on time and location
+
+*** General
+#+begin_src conf :tangle redshift/.config/redshift/redshift.conf
+location-provider=manual
+adjustment-method=randr
+
+[manual]
+lat=48.13
+lon=11.58
+#+end_src
+
+
