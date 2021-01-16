@@ -1573,7 +1573,12 @@ exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg
 exec --no-startup-id redshift -l48.13:11.58
 #+end_src
 ** i3status
-*** General
+*** Configuration
+
+Configuration of what is shown in the status menu on top. On notebook
+the battery level is shown and the pulse audio sink is 0. On desktop
+computer the pulse audio sink is 1.
+
 #+begin_src conf :tangle i3status/.config/i3status/config
 general {
 		colors = true
@@ -1586,7 +1591,30 @@ order += "wireless _first_"
 order += "battery all"
 order += "volume master"
 order += "tztime local"
+#+end_src
 
+
+#+begin_src conf :tangle (when (string= (system-name) "portia") "i3status/.config/i3status/config")
+battery all {
+		format = "%status %percentage %remaining"
+}
+
+volume master {
+	format = " %volume"
+	format_muted = " muted (%volume)"
+	device = "pulse:0"
+}
+#+end_src
+
+#+begin_src conf :tangle (when (string= (system-name) "heisenberg") "i3status/.config/i3status/config")
+volume master {
+	format = " %volume"
+	format_muted = " muted (%volume)"
+	device = "pulse:1"
+}
+#+end_src
+
+#+begin_src conf :tangle i3status/.config/i3status/config
 disk "/" {
 	format = " %free"
 }
@@ -1594,10 +1622,6 @@ disk "/" {
 wireless _first_ {
     format_up = " (%quality at %essid, %bitrate) %ip"
     format_down = "W: down"
-}
-
-battery all {
-		format = "%status %percentage %remaining"
 }
 
 tztime local {
@@ -1608,14 +1632,6 @@ tztime local {
 cpu_temperature 0 {
     format = "T: %degrees °C"
 	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input"
-}
-
-# 
-
-volume master {
-	format = " %volume"
-	format_muted = " muted (%volume)"
-	device = "pulse:0"
 }
 #+end_src
 ** Redshift
