@@ -192,3 +192,4 @@ bar {
 }
 
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg
+exec --no-startup-id redshift -l48.13:11.58
