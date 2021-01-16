@@ -188,24 +188,25 @@
 ;; (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
-
 ;; ---------------------------------------------------------------------------
 ;; org-mode
 ;; ---------------------------------------------------------------------------
 
-(require 'org-superstar)
-(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
-
-(set-face-attribute 'org-document-title nil :font "Cantarell" :weight 'bold :height 1.3)
-(dolist (face '((org-level-1 . 1.2)
-                (org-level-2 . 1.1)
-                (org-level-3 . 1.05)
-                (org-level-4 . 1.0)
-                (org-level-5 . 1.1)
-                (org-level-6 . 1.1)
-                (org-level-7 . 1.1)
-                (org-level-8 . 1.1)))
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode)
+  :config
+  (set-face-attribute 'org-document-title nil :font "Cantarell" :weight 'bold :height 1.3)
+  (dolist (face '((org-level-1 . 1.2)
+                  (org-level-2 . 1.1)
+		  (org-level-3 . 1.05)
+		  (org-level-4 . 1.0)
+		  (org-level-5 . 1.1)
+		  (org-level-6 . 1.1)
+		  (org-level-7 . 1.1)
+		  (org-level-8 . 1.1)))
   (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+)
+
 
 
 (require 'org-install)
@@ -390,16 +391,6 @@
 			(ibuffer-switch-to-saved-filter-groups "default")))
 (add-hook 'mu4e-view-mode-hook 'visual-line-mode)
 
-
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-;; Host packages
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-;; ---------------------------------------------------------------------------
-
-
 ;; ---------------------------------------------------------------------------
 ;; yasnippet
 ;; ---------------------------------------------------------------------------
@@ -407,7 +398,6 @@
 (yas/global-mode 1)
 (setq yas-wrap-arount-region t)
 ;;(yas/load-directory "~/.emacs.d/elpa/yasnippet-20120822.52/snippets")
-
 
 ;; ---------------------------------------------------------------------------
 ;; glsl-mode
@@ -564,7 +554,7 @@
 ;;        (call-interactively
 ;;         (intern
 ;;          (ido-completing-read
-;;           "M-x "
+;;      p     "M-x "
 ;;           (all-completions "" obarray 'commandp))))))
 
 
