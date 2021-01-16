@@ -421,29 +421,15 @@
 ;; ---------------------------------------------------------------------------
 ;; auto-complete
 ;; ---------------------------------------------------------------------------
-(require 'auto-complete-config)
-(ac-config-default)
-
-;;(setq ac-clang-flags
-;;      (mapcar (lambda (item)(concat "-I" item))
-;;              (split-string
-;;                "
-;;  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.0/../../../../include/c++/4.7.0
-;;  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.0/../../../../include/c++/4.7.0/x86_64-unknown-linux-gnu
-;;  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.0/../../../../include/c++/4.7.0/backward
-;;  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.0/include
-;;  /usr/local/include
-;;  /usr/lib/gcc/x86_64-unknown-linux-gnu/4.7.0/include-fixed
-;;  /usr/include
-;; "
-;;                )))
-;; 
 (defun ac-c-mode-setup ()
   (setq ac-sources '(ac-source-semantic ac-source-semantic-raw ac-source-yasnippet)))
-;  (setq ac-sources '(ac-source-gtags ac-source-abbrev ac-source-dictionary
-;									 ac-source-words-in-same-mode-buffers)))
-(add-hook 'c++-mode-hook 'ac-c-mode-setup)
-(add-hook 'c-mode-hook 'ac-c-mode-setup)
+
+(use-package auto-complete-config
+  :hook
+  ('c++-mode . 'ac-c-mode-setup)
+  ('c-mode . 'ac-c-mode-setup)
+  :config
+  (ac-config-default))
 
 ;; ---------------------------------------------------------------------------
 ;; bbdb
