@@ -1528,14 +1528,33 @@ mode "execute" {
 workspace_auto_back_and_forth yes
 
 bindsym $mod+r mode "resize"
+#+end_src
 
+*** Hardware keys
+
+Setup of hardware keys like volume up / down or brightness on
+notebook. This configuration is computer specific.
+
+#+begin_src conf :tangle (when (string= system-name "portia") "i3/.config/i3/config")
 # Audio keys
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+#+end_src
 
+#+begin_src conf :tangle (when (string= system-name "heisenberg") "i3/.config/i3/config")
+# Audio keys
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +2%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -2%
+#+end_src
+
+
+*** Others
+
+#+begin_src conf :tangle i3/.config/i3/config
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -1548,7 +1567,6 @@ bar {
 
 The location must be given to redshift because reading the config file
 does not work if it is managed by stow.
-
 
 #+begin_src conf :tangle i3/.config/i3/config
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg
