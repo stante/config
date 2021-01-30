@@ -114,8 +114,8 @@ Initial emacs Konfiguration
 *** Icons
 
 This package contains custom programming icons. After installing the
-package the helper function =all-the-icons-install-fonts= has to be
-used to acutally download the fonts. On linux machine =fc-cache -f -v=
+package the helper function ~all-the-icons-install-fonts~ has to be
+used to acutally download the fonts. On linux machine ~fc-cache -f -v~
 must be executed to update the font cache.
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
