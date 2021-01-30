@@ -26,6 +26,7 @@ compinit
 
 alias ls='exa'
 alias ll='exa -la'
+alias cat='batcat'
 alias diff='diff --color'
 alias tree='tree -AC'
 PS1='[%~]$ '
