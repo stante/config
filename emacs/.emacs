@@ -86,11 +86,8 @@
 ;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
 
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 1.0)
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 110)
 (set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.2 :weight 'regular)
-(set-face-attribute 'org-block nil :height 0.9)
-(set-face-attribute 'org-block-begin-line nil :height 0.9)
-(set-face-attribute 'org-block-end-line nil :height 0.9)
 
 (use-package all-the-icons)
 
@@ -225,6 +222,9 @@
 		  (org-level-7 . 1.1)
 		  (org-level-8 . 1.1)))
   (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+  (set-face-attribute 'org-block nil :height 0.9)
+  (set-face-attribute 'org-block-begin-line nil :height 0.9)
+  (set-face-attribute 'org-block-end-line nil :height 0.9)
 )
 
 
