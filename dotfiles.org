@@ -1,3 +1,4 @@
+
 * Emacs configuration 
 
 Initial emacs Konfiguration
@@ -259,6 +260,7 @@ key binding. To execute, just wait 1 sec after 'C-x'.
 ;; (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 #+end_src
+
 ** Org Mode
 #+begin_src emacs-lisp :tangle emacs/.emacs
 
@@ -522,6 +524,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 
 
 #+end_src
+
 ** Yasnippet
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
@@ -533,6 +536,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 (setq yas-wrap-arount-region t)
 ;;(yas/load-directory "~/.emacs.d/elpa/yasnippet-20120822.52/snippets")
 #+end_src
+
 ** Others
 #+begin_src emacs-lisp :tangle emacs/.emacs
 
@@ -713,6 +717,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 (global-set-key (kbd "C-c p p") 'counsel-projectile-switch-project)
 (put 'dired-find-alternate-file 'disabled nil)
 #+end_src
+
 * Application configuration
 ** ZSH
 
