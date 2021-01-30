@@ -24,8 +24,8 @@ zstyle ':completion:*' menu select
 compinit
 # End of lines added by compinstall
 
-alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ls='exa'
+alias ll='exa -la'
 alias diff='diff --color'
 alias tree='tree -AC'
 PS1='[%~]$ '
