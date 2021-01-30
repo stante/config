@@ -100,6 +100,13 @@ Initial emacs Konfiguration
 #+end_src
 
 ** UI
+*** Icons
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
+(use-package all-the-icons)
+#+end_src
+
+
 *** Doom Modeline
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
@@ -107,6 +114,19 @@ Initial emacs Konfiguration
   :ensure t
   :hook (after-init . doom-modeline-mode))
 #+end_src
+
+** Helpful
+
+Helpful is an alternative to the stock help buffer
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
+(use-package helpful
+  :bind
+  ("C-h f" . helpful-callable)
+  ("C-h v" . helpful-variable)
+  ("C-h k" . helpful-key))
+#+end_src
+
 
 ** Which-Key
 
@@ -338,7 +358,11 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package elpy
-  :hook (elpy-mode . lsp))
+  :ensure t
+  :defer t
+  :hook (elpy-mode . lsp)
+  :init
+  (advice-add 'python-mode :before 'elpy-enable))
 
 (use-package conda
   :init

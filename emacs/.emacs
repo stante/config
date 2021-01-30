@@ -86,9 +86,17 @@
 ;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
 
+(use-package all-the-icons)
+
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode))
+
+(use-package helpful
+  :bind
+  ("C-h f" . helpful-callable)
+  ("C-h v" . helpful-variable)
+  ("C-h k" . helpful-key))
 
 (use-package which-key)
 
@@ -285,7 +293,11 @@
   (lsp-enable-which-key-integration t))
 
 (use-package elpy
-  :hook (elpy-mode . lsp))
+  :ensure t
+  :defer t
+  :hook (elpy-mode . lsp)
+  :init
+  (advice-add 'python-mode :before 'elpy-enable))
 
 (use-package conda
   :init
