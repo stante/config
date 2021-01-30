@@ -86,6 +86,10 @@
 ;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
 
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 1.0)
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.0 :weight 'regular)
+(set-face-attribute 'all-faces nil :font "Cantarell" :height 1.0 :weight 'regular)
+
 (use-package all-the-icons)
 
 (use-package doom-modeline
@@ -242,6 +246,10 @@
 
 ; Set files for agenda
 (setq org-agenda-files (list org-default-notes-file))
+
+(use-package org-variable-pitch
+  :hook
+  (org-mode . org-variable-pitch-minor-mode))
 
 ;; ---------------------------------------------------------------------------
 ;; linum-mode

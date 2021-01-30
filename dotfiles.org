@@ -100,17 +100,27 @@ Initial emacs Konfiguration
 #+end_src
 
 ** UI
+*** Fonts
+
+
+    
+#+begin_src emacs-lisp :tangle emacs/.emacs
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 1.0)
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.0 :weight 'regular)
+(set-face-attribute 'all-faces nil :font "Cantarell" :height 1.0 :weight 'regular)
+#+end_src
+
+
 *** Icons
 
 This package contains custom programming icons. After installing the
-package the helper function 'all-the-icons-install-fonts' has to be
-used to acutally download the fonts. On linux machine 'fc-cache -f -v'
+package the helper function =all-the-icons-install-fonts= has to be
+used to acutally download the fonts. On linux machine =fc-cache -f -v=
 must be executed to update the font cache.
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package all-the-icons)
 #+end_src
-
 
 *** Doom Modeline
 
@@ -290,6 +300,10 @@ key binding. To execute, just wait 1 sec after 'C-x'.
 
 ; Set files for agenda
 (setq org-agenda-files (list org-default-notes-file))
+
+(use-package org-variable-pitch
+  :hook
+  (org-mode . org-variable-pitch-minor-mode))
 #+end_src
 
 ** Others
