@@ -35,7 +35,7 @@
  '(custom-safe-themes
    '("e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default))
  '(package-selected-packages
-   '(org-superstar counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
+   '(which-key lsp-mode org-superstar counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
 
 ;; ---------------------------------------------------------------------------
 ;; Basic configuration
@@ -85,6 +85,8 @@
 
 ;; write time stamp to file when saving
 (add-hook 'before-save-hook 'time-stamp)
+
+(use-package which-key-mode)
 
 ;; ---------------------------------------------------------------------------
 ;; Own functions
@@ -268,6 +270,14 @@
 ;; Winner-mode
 ;; ---------------------------------------------------------------------------
 (winner-mode 1)
+
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :config
+  (lsp-enable-which-key-integration t))
+
+(use-package elpy
+  :hook (elpy-mode . lsp))
 
 ;; ---------------------------------------------------------------------------
 ;; CMake
