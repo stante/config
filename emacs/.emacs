@@ -87,8 +87,10 @@
 (add-hook 'before-save-hook 'time-stamp)
 
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 1.0)
-(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.0 :weight 'regular)
-(set-face-attribute 'all-faces nil :font "Cantarell" :height 1.0 :weight 'regular)
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.2 :weight 'regular)
+(set-face-attribute 'org-block nil :height 0.9)
+(set-face-attribute 'org-block-begin-line nil :height 0.9)
+(set-face-attribute 'org-block-end-line nil :height 0.9)
 
 (use-package all-the-icons)
 

@@ -106,8 +106,10 @@ Initial emacs Konfiguration
     
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 1.0)
-(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.0 :weight 'regular)
-(set-face-attribute 'all-faces nil :font "Cantarell" :height 1.0 :weight 'regular)
+(set-face-attribute 'variable-pitch nil :font "Cantarell" :height 1.2 :weight 'regular)
+(set-face-attribute 'org-block nil :height 0.9)
+(set-face-attribute 'org-block-begin-line nil :height 0.9)
+(set-face-attribute 'org-block-end-line nil :height 0.9)
 #+end_src
 
 
@@ -401,6 +403,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 				("\\.cmake\\'" . cmake-mode))
 				auto-mode-alist)))
 #+end_src
+
 ** Others
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
