@@ -342,7 +342,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 
 (use-package conda
   :init
-  (setq conda-anaconda-home "/home/alex/opt/miniconda3/")
+  (setq conda-anaconda-home "/home/alex/opt/miniconda3/"))
 #+end_src
 
 ** CMake

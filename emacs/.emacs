@@ -289,7 +289,7 @@
 
 (use-package conda
   :init
-  (setq conda-anaconda-home "/home/alex/opt/miniconda3/")
+  (setq conda-anaconda-home "/home/alex/opt/miniconda3/"))
 
 ;; ---------------------------------------------------------------------------
 ;; CMake
