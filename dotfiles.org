@@ -1,3 +1,19 @@
+#+TITLE: Configuration files
+* Usage
+The configuration files are genererated from the org file via the
+function
+
+~(org-bable-tangle)~
+
+or the keybinding
+
+ ~"C-c C-v t"~
+
+The generated configuration must be enclosed in a source block with:
+
+#+begin_src
+
+#+end_src
 
 * Emacs configuration 
 
@@ -1420,7 +1436,6 @@ color quoted4		color212	default
 color signature		color212	default
 
 #+end_src
-
 
 * Desktop configuration
 ** X
