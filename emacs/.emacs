@@ -101,7 +101,8 @@
   ("C-h v" . helpful-variable)
   ("C-h k" . helpful-key))
 
-(use-package which-key)
+(use-package which-key
+  :config (which-key-mode))
 
 ;; ---------------------------------------------------------------------------
 ;; Own functions

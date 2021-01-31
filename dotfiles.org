@@ -149,7 +149,8 @@ Which Key is a minor mode which show the name of the function of the
 key binding. To execute, just wait 1 sec after 'C-x'.
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
-(use-package which-key)
+(use-package which-key
+  :config (which-key-mode))
 #+end_src
 
 ** Others
