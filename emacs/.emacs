@@ -224,7 +224,7 @@
   (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
   (set-face-attribute 'org-block nil :height 0.9)
   (set-face-attribute 'org-block-begin-line nil :height 0.9)
-  (set-face-attribute 'org-block-end-line nil :height 0.9)
+  (set-face-attribute 'org-block-end-line nil :height 1.0)
 )
 
 
