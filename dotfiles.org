@@ -276,6 +276,15 @@ key binding. To execute, just wait 1 sec after 'C-x'.
 #+end_src
 
 ** Org Mode
+
+We increase the scale of inline latex images.
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
+(use-package org
+  :config
+  (plist-put org-format-latex-options :scale 1.5))
+#+end_src
+
 #+begin_src emacs-lisp :tangle emacs/.emacs
 
 ;; ---------------------------------------------------------------------------
@@ -325,6 +334,14 @@ key binding. To execute, just wait 1 sec after 'C-x'.
 (use-package org-variable-pitch
   :hook
   (org-mode . org-variable-pitch-minor-mode))
+#+end_src
+
+*** Org Drill
+
+Flashcards based on org-mode
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
+(use-package org-drill)
 #+end_src
 
 ** Others

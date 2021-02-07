@@ -206,6 +206,10 @@
 ;; (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
+(use-package org
+  :config
+  (plist-put org-format-latex-options :scale 1.5))
+
 ;; ---------------------------------------------------------------------------
 ;; org-mode
 ;; ---------------------------------------------------------------------------
@@ -253,6 +257,8 @@
 (use-package org-variable-pitch
   :hook
   (org-mode . org-variable-pitch-minor-mode))
+
+(use-package org-drill)
 
 ;; ---------------------------------------------------------------------------
 ;; linum-mode
