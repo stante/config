@@ -259,7 +259,9 @@
   :hook
   (org-mode . org-variable-pitch-minor-mode))
 
-(use-package org-drill)
+(use-package org-drill
+  :config
+  (setq org-drill-add-random-noise-to-intervals-p t))
 
 ;; ---------------------------------------------------------------------------
 ;; linum-mode

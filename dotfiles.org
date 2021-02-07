@@ -345,7 +345,9 @@ latex images. For nice script fonts, we add the package 'boondox-cal'.
 Flashcards based on org-mode
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
-(use-package org-drill)
+(use-package org-drill
+  :config
+  (setq org-drill-add-random-noise-to-intervals-p t))
 #+end_src
 
 ** Others
