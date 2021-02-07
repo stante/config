@@ -277,12 +277,16 @@ key binding. To execute, just wait 1 sec after 'C-x'.
 
 ** Org Mode
 
-We increase the scale of inline latex images.
+By default dvipng is used to generate the pngs of latex formulas. This
+can be configured via the variable
+~org-preview-latex-default-process~. We increase the scale of inline
+latex images. For nice script fonts, we add the package 'boondox-cal'.
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package org
   :config
-  (plist-put org-format-latex-options :scale 1.5))
+  (plist-put org-format-latex-options :scale 1.5)
+  (add-to-list 'org-latex-packages-alist '("" "BOONDOX-cal")))
 #+end_src
 
 #+begin_src emacs-lisp :tangle emacs/.emacs

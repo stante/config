@@ -208,7 +208,8 @@
 
 (use-package org
   :config
-  (plist-put org-format-latex-options :scale 1.5))
+  (plist-put org-format-latex-options :scale 1.5)
+  (add-to-list 'org-latex-packages-alist '("" "BOONDOX-cal")))
 
 ;; ---------------------------------------------------------------------------
 ;; org-mode
