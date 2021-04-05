@@ -1708,12 +1708,8 @@ bar {
 
 *** Applications on startup
 
-The location must be given to redshift because reading the config file
-does not work if it is managed by stow.
-
 #+begin_src conf :tangle i3/.config/i3/config
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/wallpaper.jpg
-exec --no-startup-id redshift -l48.13:11.58
 #+end_src
 ** i3status
 *** Configuration
