@@ -1465,7 +1465,15 @@ color signature		color212	default
 Kitty is terminal emulator. Documentation is available at
 https://sw.kovidgoyal.net/kitty/conf.html
 
-#+begin_src conf :tangle kitty/.config/kitty/kitty.yml
+To use transparency, a compsitor like ~xcompmgr~ is needed.
+
+To use kitty, configure it as a default for ~x-terminal-emulator~ with:
+
+#+begin_src
+$ update-alternatives --config x-terminal-emulator
+#+end_src
+
+#+begin_src conf :tangle kitty/.config/kitty/kitty.conf
 background_opacity 0.8
 #+end_src
 
