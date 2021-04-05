@@ -8,3 +8,4 @@ stow -v neomutt
 stow -v X
 stow -v zsh
 stow -v redshift
+stow -v kitty

@@ -1460,6 +1460,15 @@ color signature		color212	default
 
 #+end_src
 
+** Kitty
+
+Kitty is terminal emulator. Documentation is available at
+https://sw.kovidgoyal.net/kitty/conf.html
+
+#+begin_src conf :tangle kitty/.config/kitty/kitty.yml
+background_opacity 0.8
+#+end_src
+
 * Desktop configuration
 ** X
 
