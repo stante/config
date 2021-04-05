@@ -1474,7 +1474,10 @@ $ update-alternatives --config x-terminal-emulator
 #+end_src
 
 #+begin_src conf :tangle kitty/.config/kitty/kitty.conf
+font_family Fira Code
+font_size 10
 background_opacity 0.8
+enable_audio_bell no
 #+end_src
 
 * Desktop configuration
