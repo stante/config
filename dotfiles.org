@@ -432,20 +432,6 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
   (setq conda-anaconda-home "/home/alex/opt/miniconda3/"))
 #+end_src
 
-** CMake
-
-#+begin_src emacs-lisp :tangle emacs/.emacs
-;; ---------------------------------------------------------------------------
-;; CMake
-;; ---------------------------------------------------------------------------
-(use-package cmake-mode
-  :config
-  (setq auto-mode-alist
-	  (append '(("CMakeLists\\.txt\\'" . cmake-mode)
-				("\\.cmake\\'" . cmake-mode))
-				auto-mode-alist)))
-#+end_src
-
 ** Others
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
@@ -1479,6 +1465,14 @@ font_size 10
 background_opacity 0.8
 enable_audio_bell no
 #+end_src
+
+** tmux
+
+#+begin_src conf :tangle tmux/.tmux.conf
+set -g status-bg colour103
+set -g status-fg black
+#+end_src
+
 
 * Desktop configuration
 ** X

@@ -9,3 +9,4 @@ stow -v X
 stow -v zsh
 stow -v redshift
 stow -v kitty
+stow -v tmux
