@@ -351,7 +351,8 @@ Flashcards based on org-mode
   (setq org-drill-scope (list "/home/alex/Documents/org/drill/drill-xcs229i.org"
                               "/home/alex/Documents/org/drill/drill-pytorch.org"
 			      "/home/alex/Documents/org/drill/drill-python.org"
-			      "/home/alex/Documents/org/drill/drill-deeplearningai-gan.org")))
+			      "/home/alex/Documents/org/drill/drill-deeplearningai-gan.org"
+			      "/home/alex/Documents/org/drill/drill-math.org")))
 #+end_src
 
 ** Others
