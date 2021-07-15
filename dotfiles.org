@@ -344,7 +344,7 @@ latex images. For nice script fonts, we add the package 'boondox-cal'.
 
 Flashcards based on org-mode
 
-#+begin_src emacs-lisp :tangle emacs/.emacs
+#+begin_src emacs-lisp :tangle (when (string= system-name "portia") "emacs/.emacs")
 (use-package org-drill
   :config
   (setq org-drill-add-random-noise-to-intervals-p t)
@@ -353,6 +353,17 @@ Flashcards based on org-mode
 			      "/home/alex/Documents/org/drill/drill-python.org"
 			      "/home/alex/Documents/org/drill/drill-deeplearningai-gan.org"
 			      "/home/alex/Documents/org/drill/drill-math.org")))
+#+end_src
+
+#+begin_src emacs-lisp :tangle (when (string= system-name "heisenberg") "emacs/.emacs")
+(use-package org-drill
+  :config
+  (setq org-drill-add-random-noise-to-intervals-p t)
+  (setq org-drill-scope (list "/home/alex/Documents/org-drill-cards/drill-xcs229i.org"
+                              "/home/alex/Documents/org-drill-cards/drill/drill-pytorch.org"
+			      "/home/alex/Documents/org-drill-cards/drill/drill-python.org"
+			      "/home/alex/Documents/org-drill-cards/drill/drill-deeplearningai-gan.org"
+			      "/home/alex/Documents/org-drill-cards/drill/drill-math.org")))
 #+end_src
 
 ** Others
