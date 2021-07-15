@@ -360,10 +360,10 @@ Flashcards based on org-mode
   :config
   (setq org-drill-add-random-noise-to-intervals-p t)
   (setq org-drill-scope (list "/home/alex/Documents/org-drill-cards/drill-xcs229i.org"
-                              "/home/alex/Documents/org-drill-cards/drill/drill-pytorch.org"
-			      "/home/alex/Documents/org-drill-cards/drill/drill-python.org"
-			      "/home/alex/Documents/org-drill-cards/drill/drill-deeplearningai-gan.org"
-			      "/home/alex/Documents/org-drill-cards/drill/drill-math.org")))
+                              "/home/alex/Documents/org-drill-cards/drill-pytorch.org"
+			      "/home/alex/Documents/org-drill-cards/drill-python.org"
+			      "/home/alex/Documents/org-drill-cards/drill-deeplearningai-gan.org"
+			      "/home/alex/Documents/org-drill-cards/drill-math.org")))
 #+end_src
 
 ** Others
