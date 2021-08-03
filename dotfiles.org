@@ -1498,6 +1498,9 @@ set -g status-fg black
 
 ** picom
 
+Picom is a X11 compositor. It was forked from the abandoned compton
+compsitor.
+
 #+begin_src conf :tangle picom/.config/picom/picom.conf
 
 shadow = true
