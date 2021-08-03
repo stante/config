@@ -10,3 +10,4 @@ stow -v zsh
 stow -v redshift
 stow -v kitty
 stow -v tmux
+stow -v picom

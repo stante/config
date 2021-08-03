@@ -1496,6 +1496,15 @@ set -g status-bg colour103
 set -g status-fg black
 #+end_src
 
+** picom
+
+#+begin_src conf :tangle picom/.config/picom/picom.conf
+
+shadow = true
+inactive-dim = 0.2
+
+#+end_src
+
 
 * Desktop configuration
 ** X
