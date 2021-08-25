@@ -1504,7 +1504,7 @@ font_size 11
 #+end_src
 
 #+begin_src conf :tangle (when (string= system-name "heisenberg") "kitty/.config/kitty/kitty.conf")
-font_size 11
+font_size 12
 #+end_src
 
 ** tmux
