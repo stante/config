@@ -57,10 +57,7 @@ Initial emacs Konfiguration
  '(bmkp-last-as-first-bookmark-file "/home/alex/.emacs.d/bookmarks")
  '(custom-enabled-themes '(doom-dracula))
  '(custom-safe-themes
-   '("e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default))
- '(package-selected-packages
-   '(doom-modeline which-key lsp-mode org-superstar counsel swiper yaml-mode doom-themes ein counsel-projectile ivy auto-complete markdown-mode realgud-ipdb realgud elpy yasnippet w3m undo-tree slime sauron projectile paredit markdown-mode+ magit load-theme-buffer-local iy-go-to-char iedit ido-hacks highlight-parentheses helm glsl-mode flycheck bookmark+ autopair auto-complete-clang auctex arduino-mode all)))
-
+   '("e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "d1c7f2db070c96aa674f1d61403b4da1fff2154163e9be76ce51824ed5ca709c" "e456955baadeba1eae3f32bf1dc65a2c69a561a714aae84e3278e1663454fe31" default)))
 #+end_src
 
 ** Basic configuration
@@ -348,7 +345,7 @@ latex images. For nice script fonts, we add the package 'boondox-cal'.
 
 Flashcards based on org-mode
 
-#+begin_src emacs-lisp :tangle (when (string= system-name "portia") "emacs/.emacs")
+#+begin_src emacs-lisp :tangle (if (string= system-name "portia") "emacs/.emacs" "no")
 (use-package org-drill
   :ensure t
   :config
@@ -360,7 +357,7 @@ Flashcards based on org-mode
 			      "/home/alex/Documents/org/drill/drill-math.org")))
 #+end_src
 
-#+begin_src emacs-lisp :tangle (when (string= system-name "heisenberg") "emacs/.emacs")
+#+begin_src emacs-lisp :tangle (if (string= system-name "heisenberg") "emacs/.emacs" "no")
 (use-package org-drill
   :ensure t
   :config
@@ -370,6 +367,19 @@ Flashcards based on org-mode
 			      "/home/alex/Documents/org-drill-cards/drill-python.org"
 			      "/home/alex/Documents/org-drill-cards/drill-deeplearningai-gan.org"
 			      "/home/alex/Documents/org-drill-cards/drill-math.org")))
+#+end_src
+
+** Org Roam
+
+Manual:  [[https://www.orgroam.com/manual.html][link]]
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
+  (use-package org-roam
+    :ensure t
+    :init
+    (setq org-roam-v2-ack t)
+    :config
+    (org-roam-db-autosync-mode))
 #+end_src
 
 ** Others
@@ -423,7 +433,6 @@ Show line numbers when programming in pyton
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package linum-mode
-  :ensure t
   :hook
   (elpy-mode . linum-mode))
 #+end_src
@@ -620,7 +629,6 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
   (setq ac-sources '(ac-source-semantic ac-source-semantic-raw ac-source-yasnippet)))
 
 (use-package auto-complete-config
-  :ensure t
   :hook
   ('c++-mode . 'ac-c-mode-setup)
   ('c-mode . 'ac-c-mode-setup)
@@ -1499,11 +1507,11 @@ background_opacity 0.8
 enable_audio_bell no
 #+end_src
 
-#+begin_src conf :tangle (when (string= system-name "portia") "kitty/.config/kitty/kitty.conf")
+#+begin_src conf :tangle (if (string= system-name "portia") "kitty/.config/kitty/kitty.conf" "no")
 font_size 11
 #+end_src
 
-#+begin_src conf :tangle (when (string= system-name "heisenberg") "kitty/.config/kitty/kitty.conf")
+#+begin_src conf :tangle (if (string= system-name "heisenberg") "kitty/.config/kitty/kitty.conf" "no")
 font_size 12
 #+end_src
 
@@ -1745,7 +1753,7 @@ bindsym $mod+r mode "resize"
 Setup of hardware keys like volume up / down or brightness on
 notebook. This configuration is computer specific.
 
-#+begin_src conf :tangle (when (string= system-name "portia") "i3/.config/i3/config")
+#+begin_src conf :tangle (if (string= system-name "portia") "i3/.config/i3/config" "no")
 # Audio keys
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
@@ -1754,7 +1762,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 #+end_src
 
-#+begin_src conf :tangle (when (string= system-name "heisenberg") "i3/.config/i3/config")
+#+begin_src conf :tangle (if (string= system-name "heisenberg") "i3/.config/i3/config" "no")
 # Audio keys
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
@@ -1800,7 +1808,7 @@ order += "tztime local"
 #+end_src
 
 
-#+begin_src conf :tangle (when (string= (system-name) "portia") "i3status/.config/i3status/config")
+#+begin_src conf :tangle (if (string= (system-name) "portia") "i3status/.config/i3status/config" "no")
 battery all {
 		format = "%status %percentage %remaining"
 }
@@ -1812,7 +1820,7 @@ volume master {
 }
 #+end_src
 
-#+begin_src conf :tangle (when (string= (system-name) "heisenberg") "i3status/.config/i3status/config")
+#+begin_src conf :tangle (if (string= (system-name) "heisenberg") "i3status/.config/i3status/config" "no")
 volume master {
 	format = " %volume"
 	format_muted = " muted (%volume)"
