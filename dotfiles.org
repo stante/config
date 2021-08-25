@@ -152,6 +152,7 @@ Helpful is an alternative to the stock help buffer
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package helpful
+  :ensure t
   :bind
   ("C-h f" . helpful-callable)
   ("C-h v" . helpful-variable)
@@ -166,6 +167,7 @@ key binding. To execute, just wait 1 sec after 'C-x'.
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package which-key
+  :ensure t
   :config (which-key-mode))
 #+end_src
 
@@ -296,6 +298,7 @@ latex images. For nice script fonts, we add the package 'boondox-cal'.
 ;; ---------------------------------------------------------------------------
 
 (use-package org-superstar
+  :ensure t
   :hook (org-mode . org-superstar-mode)
   :config
   (set-face-attribute 'org-document-title nil :font "Cantarell" :weight 'bold :height 1.3)
@@ -336,6 +339,7 @@ latex images. For nice script fonts, we add the package 'boondox-cal'.
 (setq org-agenda-files (list org-default-notes-file))
 
 (use-package org-variable-pitch
+  :ensure t
   :hook
   (org-mode . org-variable-pitch-minor-mode))
 #+end_src
@@ -346,6 +350,7 @@ Flashcards based on org-mode
 
 #+begin_src emacs-lisp :tangle (when (string= system-name "portia") "emacs/.emacs")
 (use-package org-drill
+  :ensure t
   :config
   (setq org-drill-add-random-noise-to-intervals-p t)
   (setq org-drill-scope (list "/home/alex/Documents/org/drill/drill-xcs229i.org"
@@ -357,6 +362,7 @@ Flashcards based on org-mode
 
 #+begin_src emacs-lisp :tangle (when (string= system-name "heisenberg") "emacs/.emacs")
 (use-package org-drill
+  :ensure t
   :config
   (setq org-drill-add-random-noise-to-intervals-p t)
   (setq org-drill-scope (list "/home/alex/Documents/org-drill-cards/drill-xcs229i.org"
@@ -417,6 +423,7 @@ Show line numbers when programming in pyton
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package linum-mode
+  :ensure t
   :hook
   (elpy-mode . linum-mode))
 #+end_src
@@ -428,6 +435,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
 (use-package lsp-mode
+  :ensure t
   :commands (lsp lsp-deferred)
   :config
   (lsp-enable-which-key-integration t))
@@ -444,6 +452,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
   (advice-add 'python-mode :before 'elpy-enable))
 
 (use-package conda
+  :ensure t
   :init
   (setq conda-anaconda-home "/home/alex/opt/miniconda3/"))
 #+end_src
@@ -611,6 +620,7 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
   (setq ac-sources '(ac-source-semantic ac-source-semantic-raw ac-source-yasnippet)))
 
 (use-package auto-complete-config
+  :ensure t
   :hook
   ('c++-mode . 'ac-c-mode-setup)
   ('c-mode . 'ac-c-mode-setup)
@@ -679,8 +689,16 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 ;; ivy
 ;; ---------------------------------------------------------------------------
 (use-package ivy
+  :ensure t
   :config
   (ivy-mode 1))
+#+end_src
+
+** Magit
+
+#+begin_src emacs-lisp :tangle emacs/.emacs
+(use-package magit
+  :ensure t)
 #+end_src
 
 ** Others
