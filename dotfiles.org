@@ -63,54 +63,57 @@ Initial emacs Konfiguration
 ** Basic configuration
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
-;; ---------------------------------------------------------------------------
-;; Basic configuration
-;; ---------------------------------------------------------------------------
-
-;; disable menu bar
-(menu-bar-mode -1)
-
-;; disable toolbar
-(tool-bar-mode -1)
-
-;; disable scrollbar
-(scroll-bar-mode -1)
-
-;; delete whole selection when character is entered
-(delete-selection-mode 1)
-
-;; set font
-(set-face-attribute 'default nil :family 'mononoki' :height 110)
-
-;; disable startup screen
-(setq inhibit-splash-screen t)
-
-;; default directory
-(setq default-directory "~/")
-
-;; show recent files in menu
-(recentf-mode)
-
-;; disabling backup files
-(setq backup-inhibited t)
-
-;; disable autosave
-(setq auto-save-default nil)
-
-;; don't put cursor in the middle of the screen after 
-(setq scroll-conservatively 1)
-
-;; set default tab width to 4
-(setq default-tab-width 4)
-
-;; no audio bell
-(setq visible-bell t)
-
-;; focus-follows-mouse in windows
-(setq mouse-autoselect-window t)
-
-;; write time stamp to file when saving
-(add-hook 'before-save-hook 'time-stamp)
+  ;; ---------------------------------------------------------------------------
+  ;; Basic configuration
+  ;; ---------------------------------------------------------------------------
+  
+  ;; disable menu bar
+  (menu-bar-mode -1)
+  
+  ;; disable toolbar
+  (tool-bar-mode -1)
+  
+  ;; disable scrollbar
+  (scroll-bar-mode -1)
+  
+  ;; delete whole selection when character is entered
+  (delete-selection-mode 1)
+  
+  ;; set font
+  (set-face-attribute 'default nil :family 'mononoki' :height 110)
+  
+  ;; disable startup screen
+  (setq inhibit-splash-screen t)
+  
+  ;; default directory
+  (setq default-directory "~/")
+  
+  ;; show recent files in menu
+  (recentf-mode)
+  
+  ;; disabling backup files
+  (setq backup-inhibited t)
+  
+  ;; disable autosave
+  (setq auto-save-default nil)
+  
+  ;; don't put cursor in the middle of the screen after 
+  (setq scroll-conservatively 1)
+  
+  ;; set default tab width to 4
+  (setq default-tab-width 4)
+  
+  ;; no audio bell
+  (setq visible-bell t)
+  
+  ;; focus-follows-mouse in windows
+  (setq mouse-autoselect-window t)
+  
+  ;; write time stamp to file when saving
+  (add-hook 'before-save-hook 'time-stamp)
+  
+  ;; default mail
+  (setq user-mail-address "stante@gmail.com")
 #+end_src
 
 ** UI
@@ -282,10 +285,12 @@ can be configured via the variable
 latex images. For nice script fonts, we add the package 'boondox-cal'.
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
-(use-package org
-  :config
-  (plist-put org-format-latex-options :scale 1.5)
-  (add-to-list 'org-latex-packages-alist '("" "BOONDOX-cal")))
+  (use-package org
+    :config
+    (plist-put org-format-latex-options :scale 1.5)
+    (add-to-list 'org-latex-packages-alist '("" "BOONDOX-cal"))
+    (setq org-ellipsis " ▼"
+	  org-hide-emphasis-markers t))
 #+end_src
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
@@ -378,6 +383,11 @@ Manual:  [[https://www.orgroam.com/manual.html][link]]
     :ensure t
     :init
     (setq org-roam-v2-ack t)
+    :custom
+    (org-roam-directory "~/Documents/Org-Roam")
+    :bind (("C-c n l" . org-roam-buffer-toggle)
+	   ("C-c n f" . org-roam-node-find)
+	   ("C-c n i" . org-roam-node-insert))
     :config
     (org-roam-db-autosync-mode))
 #+end_src
@@ -708,6 +718,34 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 (use-package magit
   :ensure t)
 #+end_src
+
+** mu4e
+
+   The variable ~mu4e-change-filenames-when-moving~ is set to true for
+   better compatibility with mbsync, if offlineimap is used, the
+   default value nil is better.
+
+   The website can be found [[https://www.djcbsoftware.nl/code/mu/mu4e.html][here]].
+   
+   #+begin_src emacs-lisp :tangle emacs/.emacs
+     (use-package mu4e
+       :ensure nil
+       :bind (:map mu4e-headers-mode-map
+		   ("l" . mu4e-headers-search)
+		   ("L" . mu4e-headers-search-edit))
+       :config
+       ;; mbysnc works better if setting is true
+       (setq mu4e-change-filenames-when-moving t)
+       ;; Gmail automatically keeps a copy of the sent messages
+       (setq mu4e-sent-messages-behavior 'delete)
+       (setq mu4e-get-mail-command "mbsync -a"
+	     mu4e-update-interval 600)
+       (setq mu4e-maildir "~/Mail")
+       (setq mu4e-drafts-folder "/[Gmail]/Drafts")
+       (setq mu4e-sent-folder "/[Gmail]/Sent Mail")
+       (setq mu4e-refile-folder "/Archiv")
+       (setq mu4e-trash-folder "/[Gmail]/Trash"))
+   #+end_src
 
 ** Others
 
@@ -1556,7 +1594,7 @@ URxvt.termName: xterm-256color
 #+end_src
 
 #+begin_src conf :tangle X/.xsessionrc
-xcompmgr &
+picom &
 setxkbmap -layout us,de -option grp:alt_shift_toggle,ctrl:nocaps &
 
 #+end_src
