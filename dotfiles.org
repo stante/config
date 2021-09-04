@@ -755,6 +755,19 @@ servers. The website of the mode can be found [[https://emacs-lsp.github.io/lsp-
 		      (setq mu4e-trash-folder "/[Gmail]/Trash"))
    #+end_src
 
+** Swiper
+
+   Swiper is a replacement for the build-in search. It shows a summary
+   of all hits in a buffer and highlights the search hit in the
+   original buffer.
+
+   Github can be found [[https://github.com/abo-abo/swiper][here]].
+
+   #+begin_src emacs-lisp :tangle emacs/.emacs
+     (use-package swiper
+       :bind ("C-s" . 'swiper-isearch))
+   #+end_src
+
 ** Others
 
 #+begin_src emacs-lisp :tangle emacs/.emacs
