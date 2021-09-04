@@ -292,13 +292,14 @@ key binding. To execute, just wait 1 sec after 'C-x'.
        (add-to-list 'org-modules 'org-habit)
        (plist-put org-format-latex-options :scale 1.5)
        (add-to-list 'org-latex-packages-alist '("" "BOONDOX-cal"))
-       (setq org-ellipsis " ▼" org-hide-emphasis-markers nil)
+       :custom
+       (org-ellipsis " ▼" org-hide-emphasis-markers nil)
        ; Set location of org files on local system
-       (setq org-directory "~/Documents/org/")
+       (org-directory "~/Documents/org/")
        ; Set location of the notes file
-       (setq org-default-notes-file (concat org-directory "Notes.org"))
+       (org-default-notes-file (concat org-directory "Notes.org"))
        ; Set files for agenda
-       (setq org-agenda-files (list org-default-notes-file
+       (org-agenda-files (list org-default-notes-file
 				    "~/Documents/org/Tasks.org"
 				    "~/Documents/org/Habits.org")))
    #+end_src
@@ -368,7 +369,7 @@ Flashcards based on org-mode
 #+begin_src emacs-lisp :tangle (if (string= system-name "heisenberg") "emacs/.emacs" "no")
 (use-package org-drill
   :ensure t
-  :config
+  :custom
   (setq org-drill-add-random-noise-to-intervals-p t)
   (setq org-drill-scope (list "/home/alex/Documents/org-drill-cards/drill-xcs229i.org"
                               "/home/alex/Documents/org-drill-cards/drill-pytorch.org"
