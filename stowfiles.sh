@@ -11,3 +11,4 @@ stow -v redshift
 stow -v kitty
 stow -v tmux
 stow -v picom
+stow -v polybar
